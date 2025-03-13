@@ -118,14 +118,6 @@ public class Server : MonoBehaviour
         //msg.Serialize(ref writer);
         driver.EndSend(writer);
     }
-    public void Broadcast(NetMessage msg)
-    {
-        for (int i = 0; i < connections.Length; ++i)
-            if (connections[i].IsCreated)
-            {
-                //Debug.Log($"Sending {msg.Code} to : {connections[i].InternalId}");
-                SendToClient(connections[i], msg);
-            }
-    }
+    
     
 }
